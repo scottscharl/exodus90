@@ -3,18 +3,19 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Exodus 90 Program Guide</title>
+    <title>Exodus 90 - 2025</title>
     <script src="https://cdn.tailwindcss.com"></script>
   </head>
   <body class="min-h-screen p-8 bg-white text-gray-800">
     <div class="max-w-4xl mx-auto relative">
       <article class="pt-12">
         <header class="mb-8">
-          <h1 class="text-4xl font-bold mb-4 text-gray-900">
-            Exodus 90 Program Guide
-          </h1>
+          <h1 class="text-4xl font-bold mb-4 text-gray-900">Exodus 90</h1>
           <p class="text-lg text-gray-600">
-            Program Duration: January 20, 2025 - April 19, 2025
+            January 20, 2025 - April 19, 2025 (<span id="daysRemaining"
+              >...</span
+            >
+            days remaining)
           </p>
         </header>
 
@@ -112,11 +113,28 @@
             <em class="text-gray-700">
               Note: The program emphasizes progress over perfection, encouraging
               participants to maintain consistency while acknowledging that
-              perfect adherence isn't expected.
+              perfect adherence isn't expected. God bless you!
             </em>
           </div>
         </footer>
       </article>
     </div>
+    <script>
+      function updateDaysRemaining() {
+        const endDate = new Date("2025-04-19T23:59:59");
+        const now = new Date();
+        const diffTime = endDate - now;
+        const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
+
+        const daysElement = document.getElementById("daysRemaining");
+        daysElement.textContent = diffDays;
+      }
+
+      // Update immediately
+      updateDaysRemaining();
+
+      // Update every minute
+      setInterval(updateDaysRemaining, 60000);
+    </script>
   </body>
 </html>
